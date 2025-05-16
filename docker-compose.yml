@@ -1,16 +1,32 @@
-version: '3.8'
+version: '3.0'
 
 services:
   camunda:
     image: camunda/camunda-bpm-platform:run-latest
+    container_name: camunda-platform
     ports:
-      - "5005:5005"
+      - 8080:8080
+    networks:
+      - java_connect
+    restart: always
     environment:
-      - PORT=3000
+      - DB_DRIVER=org.h2.Driver
+      - DB_URL=jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1
+      - DB_USERNAME=sa
+      - DB_PASSWORD=
 
-  app:
-    build: .
-    depends_on:
-      - camunda
+  node-app:
+    build: /var/lib/jenkins/workspace/camunda # Adjust to Jenkins job workspace
+    container_name: camunda-node-app
+    image: camunda_node_app
+    ports:
+      - 5003:5003
+    networks:
+      - java_connect
+    restart: always
     environment:
-      CAMUNDA_BASE_URL: http://camunda:5004/engine-rest
+      - PORT=3003
+
+networks:
+  java_connect:
+    external: true
