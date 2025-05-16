@@ -1,0 +1,27 @@
+{
+  "name": "ora_ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.8.2",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dmn-js": "^17.1.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "express-xml-bodyparser": "^0.3.0",
+    "form-data": "^4.0.1",
+    "mongoose": "^8.12.1",
+    "node-fetch": "^3.3.2",
+    "xml2js": "^0.6.2",
+    "xmldom": "^0.6.0"
+  },
+  "description": ""
+}

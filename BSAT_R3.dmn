@@ -1,0 +1,2921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="BSAT_R3_DRD" name="BSAT_R3_DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.26.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
+  <decision id="Products" name="Products" camunda:historyTimeToLive="160">
+    <decisionTable id="DecisionTable_0hkqw81" hitPolicy="FIRST">
+      <input id="Input_1" label="product_category">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>product_category</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0zov9h3" label="product_invoice_date">
+        <inputExpression id="LiteralExpression_1i6tmdm" typeRef="string">
+          <text>product_invoice_date</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_090rgrt" label="product_FNL_volume_RW">
+        <inputExpression id="LiteralExpression_0zrzdew" typeRef="string">
+          <text>product_FNL_volume_RW</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0e1clzg" label="product_scheme_id">
+        <inputExpression id="LiteralExpression_0ov1mdo" typeRef="string">
+          <text>product_scheme_id</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1820nim" label="product_dealer_AC_number">
+        <inputExpression id="LiteralExpression_071uo7y" typeRef="string">
+          <text>product_dealer_AC_number</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_05x2r9b" label="product_dealer_type">
+        <inputExpression id="LiteralExpression_0lnw4cq" typeRef="string">
+          <text>product_dealer_type</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0y7kv9t" label="product_bill_to">
+        <inputExpression id="LiteralExpression_1g04keb" typeRef="string">
+          <text>product_bill_to</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1h8dtg1" label="product_name">
+        <inputExpression id="LiteralExpression_03ys7eg" typeRef="string">
+          <text>product_name</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_08a0itu" label="product_category_description">
+        <inputExpression id="LiteralExpression_1i40iom" typeRef="string">
+          <text>product_category_description</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0tk79v9" label="product_group">
+        <inputExpression id="LiteralExpression_0mpwqgk" typeRef="string">
+          <text>product_group</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0y67yzo" label="product_shade_code">
+        <inputExpression id="LiteralExpression_15roks7" typeRef="string">
+          <text>product_shade_code</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0bav275" label="product_UOM">
+        <inputExpression id="LiteralExpression_1xxkolk" typeRef="string">
+          <text>product_UOM</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1vhsydi" label="product_pack_size">
+        <inputExpression id="LiteralExpression_1l36tcr" typeRef="string">
+          <text>product_pack_size</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_03b4tn8" label="product_code">
+        <inputExpression id="LiteralExpression_0grh0r6" typeRef="string">
+          <text>product_code</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1q3eanw" label="product_value">
+        <inputExpression id="LiteralExpression_04x2451" typeRef="string">
+          <text>product_value</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1evw4pn" label="product_volume">
+        <inputExpression id="LiteralExpression_043gyho" typeRef="string">
+          <text>product_volume</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1qos8ju" label="product_value_RW">
+        <inputExpression id="LiteralExpression_0bjuw9p" typeRef="string">
+          <text>product_value_RW</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1gpcicb" label="product_volume_RW">
+        <inputExpression id="LiteralExpression_13nzdlq" typeRef="string">
+          <text>product_volume_RW</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0sboyf6" label="the_product_value_RW" name="the_product_value_RW" typeRef="string" />
+      <output id="OutputClause_0a8etn6" label="the_product_volume_RW" name="the_product_volume_RW" typeRef="string" />
+      <output id="OutputClause_0tpn0vv" label="the_product_value" name="the_product_value" typeRef="string" />
+      <output id="OutputClause_0sw8sre" label="the_product_volume" name="the_product_volume" typeRef="string" />
+      <output id="OutputClause_0avgoqo" label="the_product_pack_size" name="the_product_pack_size" typeRef="string" />
+      <output id="OutputClause_0c63di6" label="the_product_UOM" name="the_product_UOM" typeRef="string" />
+      <output id="OutputClause_1arjbtw" label="the_product_shade_code" name="the_product_shade_code" typeRef="string" />
+      <output id="OutputClause_0ptvmpx" label="the_product_code" name="the_product_code" typeRef="string" />
+      <output id="OutputClause_0qyytoa" label="the_product_group" name="the_product_group" typeRef="string" />
+      <output id="OutputClause_12hifo3" label="the_product_category_description" name="the_product_category_description" typeRef="string" />
+      <output id="OutputClause_0jvw7z8" label="the_product_name" name="the_product_name" typeRef="string" />
+      <output id="OutputClause_0hctmh2" label="the_product_bill_to" name="the_product_bill_to" typeRef="string" />
+      <output id="OutputClause_0swil4x" label="the_product_dealer_type" name="the_product_dealer_type" typeRef="string" />
+      <output id="OutputClause_12kj1ec" label="the_product_dealer_AC_number" name="the_product_dealer_AC_number" typeRef="string" />
+      <output id="OutputClause_123bmat" label="the_product_scheme_id" name="the_product_scheme_id" typeRef="string" />
+      <output id="Output_1" label="the_product_category" name="the_product_category" typeRef="string" />
+      <output id="OutputClause_1kuktrk" label="the_product_invoice_date" name="the_product_invoice_date" typeRef="string" />
+      <output id="OutputClause_06xbp0u" label="the_product_FNL_volume_RW" name="the_product_FNL_volume_RW" typeRef="string" />
+      <rule id="DecisionRule_18sev6l">
+        <inputEntry id="UnaryTests_0btiyz1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h6culf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zgewl8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kqw7l7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s3ks67">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_128dycy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dndmg9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ih8g94">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tsc75x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y2k0ek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fizodg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0stw3bg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xawgi9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fhogn9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lou5yc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d7b7fu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x2ru74">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nalhrt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rpyf7k">
+          <text>product_value_RW</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_120xsc5">
+          <text>product_volume_RW</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vjwcg5">
+          <text>product_value</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i0v8dr">
+          <text>product_volume</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08f53qj">
+          <text>product_pack_size</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09jsrhj">
+          <text>product_UOM</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yughx0">
+          <text>product_shade_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0swt20a">
+          <text>product_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nvftx1">
+          <text>product_group</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11rthzi">
+          <text>product_category_description</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1md55a3">
+          <text>product_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h2z8pl">
+          <text>product_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13342bb">
+          <text>product_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0suyl32">
+          <text>product_dealer_AC_number</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l20i9f">
+          <text>product_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nyiu2a">
+          <text>product_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02trm6v">
+          <text>product_invoice_date</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d5oip3">
+          <text>product_FNL_volume_RW</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00c8rw8">
+        <inputEntry id="UnaryTests_1c0hx5k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mmouiz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hi6bhk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tqpo9b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sasw2n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n5jt88">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h25kfw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jifaoi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1atjoju">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_013og2r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wcvncy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xepb48">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vr4mpu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ve4lfh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0um4hsz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02rd713">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18qrsp2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cwpzvt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zjkmoj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_014f365">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n0trpm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15wgat8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gz6eue">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rasx1y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pz2jcx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_123qpqc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cyaoj1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hwergy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wof7g7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_029tpj9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sz577y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rqk90a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_066sfui">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d01dx3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fb03aq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00kwoct">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Product_Eligible" name="Product_Eligible" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_04lnj2k">
+      <requiredDecision href="#Products" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_07u1i49" hitPolicy="FIRST">
+      <input id="InputClause_0t5i5dw" label="the_product_category">
+        <inputExpression id="LiteralExpression_1flpwkq" typeRef="string">
+          <text>the_product_category</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0zretou" label="the_product_invoice_date">
+        <inputExpression id="LiteralExpression_0inyply" typeRef="string">
+          <text>the_product_invoice_date</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_11lig0c" label="the_product_is_eligibleFor_LY" name="the_product_is_eligibleFor_LY" typeRef="string" />
+      <output id="OutputClause_1xhfcog" label="the_product_is_eligibleFor_TY" name="the_product_is_eligibleFor_TY" typeRef="string" />
+      <rule id="DecisionRule_0speim5">
+        <inputEntry id="UnaryTests_0ti9jn8">
+          <text>"WCS"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lfos25">
+          <text>"2017-03-22"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08797ik">
+          <text>"TRUE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x7x5sz">
+          <text>"FALSE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n6v078">
+        <inputEntry id="UnaryTests_01o5ji4">
+          <text>"WCS"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rxfi3p">
+          <text>"2018-03-22"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0393zll">
+          <text>"FALSE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l412bl">
+          <text>"TRUE"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Dealer" name="Dealer" camunda:historyTimeToLive="160">
+    <decisionTable id="DecisionTable_0j9pvz9" hitPolicy="FIRST">
+      <input id="InputClause_1u98cm4" label="dealer_bill_to">
+        <inputExpression id="LiteralExpression_01rlcdd" typeRef="string">
+          <text>dealer_bill_to</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_16u6xgf" label="dealer_region">
+        <inputExpression id="LiteralExpression_15l4cmk" typeRef="string">
+          <text>dealer_region</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1t27tv0" label="dealer_depot_state">
+        <inputExpression id="LiteralExpression_0f89568" typeRef="string">
+          <text>dealer_depot_state</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_054jir1" label="dealer_depot">
+        <inputExpression id="LiteralExpression_1yuei14" typeRef="string">
+          <text>dealer_depot</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1r6vuf1" label="dealer_territory_code">
+        <inputExpression id="LiteralExpression_0n4ywrz" typeRef="string">
+          <text>dealer_territory_code</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1spuvzs" label="dealer_territory_name">
+        <inputExpression id="LiteralExpression_0bujsvq" typeRef="string">
+          <text>dealer_territory_name</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_10soiuc" label="dealer_code">
+        <inputExpression id="LiteralExpression_139k96h" typeRef="string">
+          <text>dealer_code</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ghc1d5" label="dealer_category">
+        <inputExpression id="LiteralExpression_0r8gyfu" typeRef="string">
+          <text>dealer_category</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0zruer8" label="dealer_type">
+        <inputExpression id="LiteralExpression_09xro9j" typeRef="string">
+          <text>dealer_type</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ovk8fr" label="dealer_name">
+        <inputExpression id="LiteralExpression_01vjd1e" typeRef="string">
+          <text>dealer_name</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_06txo4d" label="dealer_scheme_id">
+        <inputExpression id="LiteralExpression_01su0xn" typeRef="string">
+          <text>dealer_scheme_id</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0eiqrit" label="dealer_territory">
+        <inputExpression id="LiteralExpression_10h86uc" typeRef="string">
+          <text>dealer_territory</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1qvpdxq" label="dealer_retention">
+        <inputExpression id="LiteralExpression_02rgiis" typeRef="string">
+          <text>dealer_retention</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0tfxnv9" label="dealer_SDLR_count">
+        <inputExpression id="LiteralExpression_1e3bfd8" typeRef="string">
+          <text>dealer_SDLR_count</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0ixwtnu" label="the_dealer_SDLR_count" name="the_dealer_SDLR_count" typeRef="string" />
+      <output id="OutputClause_135kt7m" label="the_dealer_retention" name="the_dealer_retention" typeRef="string" />
+      <output id="OutputClause_098b1d1" label="the_dealer_territory" name="the_dealer_territory" typeRef="string" />
+      <output id="OutputClause_0nzlmkp" label="the_dealer_bill_to" name="the_dealer_bill_to" typeRef="string" />
+      <output id="OutputClause_16nekg6" label="the_dealer_region" name="the_dealer_region" typeRef="string" />
+      <output id="OutputClause_05qcyo7" label="the_dealer_depot_state" name="the_dealer_depot_state" typeRef="string" />
+      <output id="OutputClause_12ozyu1" label="the_dealer_depot" name="the_dealer_depot" typeRef="string" />
+      <output id="OutputClause_0ghe4s7" label="the_dealer_territory_code" name="the_dealer_territory_code" typeRef="string" />
+      <output id="OutputClause_118ylqx" label="the_dealer_territory_name" name="the_dealer_territory_name" typeRef="string" />
+      <output id="OutputClause_0fhiubw" label="the_dealer_code" name="the_dealer_code" typeRef="string" />
+      <output id="OutputClause_1x5jk0p" label="the_dealer_category" name="the_dealer_category" typeRef="string" />
+      <output id="OutputClause_0c4hkj4" label="the_dealer_type" name="the_dealer_type" typeRef="string" />
+      <output id="OutputClause_1n50izy" label="the_dealer_name" name="the_dealer_name" typeRef="string" />
+      <output id="OutputClause_11rect0" label="the_dealer_scheme_id" name="the_dealer_scheme_id" typeRef="string" />
+      <output id="OutputClause_0u14vlr" label="the_reward_1" name="the_reward_1" typeRef="string" />
+      <output id="OutputClause_1k38196" label="the_reward_2" name="the_reward_2" typeRef="string" />
+      <rule id="DecisionRule_1vs3i42">
+        <inputEntry id="UnaryTests_0p4hfbj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ke9ng5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zx8txo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_018ehlv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fe7pik">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01kbl9w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i13v4k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0slk4wh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w6fzkk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qhvr1u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z27rhj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vp6pra">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07q0a44">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h2mf1k">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mn7a25">
+          <text>dealer_SDLR_count</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0equ06j">
+          <text>dealer_retention</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hm4utf">
+          <text>dealer_territory</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_087x6w5">
+          <text>dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0viupja">
+          <text>dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ch35jp">
+          <text>dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ezzbat">
+          <text>dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0avpnec">
+          <text>dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10709g3">
+          <text>dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07uw09e">
+          <text>dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13n6y6s">
+          <text>dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0273lf8">
+          <text>dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ez43bf">
+          <text>dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0256q73">
+          <text>dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r9u9qv">
+          <text>dealer_bill_to+"_1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xqk3ov">
+          <text>dealer_bill_to+"_2"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="dealer_TY_Volume" name="dealer_TY_Volume" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_0sdxnhl">
+      <requiredDecision href="#Product_Eligible" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_08uzguo" hitPolicy="FIRST">
+      <input id="InputClause_0ah3rip" label="the_financial_analysis_flag">
+        <inputExpression id="LiteralExpression_0f6nt35" typeRef="string">
+          <text>the_financial_analysis_flag</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1rz63cu" label="the_product_FNL_volume_RW" biodi:width="192">
+        <inputExpression id="LiteralExpression_0ksr6fg" typeRef="string">
+          <text>the_product_FNL_volume_RW</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0irno4z" label="the_product_is_eligibleFor_LY">
+        <inputExpression id="LiteralExpression_0pse1sq" typeRef="string">
+          <text>the_product_is_eligibleFor_LY</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1ornurg" label="the_product_is_eligibleFor_TY">
+        <inputExpression id="LiteralExpression_123kvg0" typeRef="string">
+          <text>the_product_is_eligibleFor_TY</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_13ssbbl" label="the_dealer_TY_Volume" name="the_dealer_TY_Volume" typeRef="string" />
+      <rule id="DecisionRule_1byr9i2">
+        <inputEntry id="UnaryTests_1rbiq2s">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tkjcg4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o38i2s">
+          <text>"TRUE"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jabhqx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o1ymiv">
+          <text>the_product_FNL_volume_RW</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12at3vg">
+        <inputEntry id="UnaryTests_0855i2k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e8jzx8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dfehsl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tus0i5">
+          <text>"TRUE"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hxdvw8">
+          <text>the_product_FNL_volume_RW</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="dealer_Main_Status" name="dealer_Main_Status" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_0diqfd8">
+      <requiredDecision href="#dealer_TY_Volume" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1f08m6r" hitPolicy="FIRST">
+      <input id="InputClause_089a67j" label="the_dealer_TY_Volume" biodi:width="248">
+        <inputExpression id="LiteralExpression_09bonwu" typeRef="string">
+          <text>the_dealer_TY_Volume</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0kwh3hv" label="the_dealer_MAIN_STATUS" name="the_dealer_MAIN_STATUS" typeRef="string" biodi:width="229" />
+      <rule id="DecisionRule_0rj4lpp">
+        <inputEntry id="UnaryTests_1ydl6c0">
+          <text>&gt;="100"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z1xhvr">
+          <text>"Q"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ekayrj">
+        <inputEntry id="UnaryTests_1moa9b6">
+          <text>&lt;"100"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00coomo">
+          <text>"NQ"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="dealer_total_CN_Budget" name="dealer_total_CN_Budget" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_1yp1lyd">
+      <requiredDecision href="#Main_CN" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1xj6tzx" hitPolicy="FIRST">
+      <input id="InputClause_01p2onp" label="the_dealer_MAIN_CN" biodi:width="192">
+        <inputExpression id="LiteralExpression_1h6yfkz" typeRef="string">
+          <text>the_dealer_MAIN_CN</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0hw9v68" label="the_dealer_total_CN" name="the_dealer_total_CN" typeRef="string" />
+      <rule id="DecisionRule_0p0mklb">
+        <inputEntry id="UnaryTests_0173oxr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uefmes">
+          <text>the_dealer_MAIN_CN</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="dealer_total_budget" name="dealer_total_budget" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_1iwiprw">
+      <requiredDecision href="#dealer_total_CN_Budget" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_008fvdo" hitPolicy="FIRST">
+      <input id="InputClause_0n43udp" label="the_dealer_total_CN">
+        <inputExpression id="LiteralExpression_1ei2lh7" typeRef="string">
+          <text>the_dealer_total_CN</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_124v949" label="the_dealer_total_budget" name="the_dealer_total_budget" typeRef="string" biodi:width="240" />
+      <rule id="DecisionRule_03asr04">
+        <inputEntry id="UnaryTests_0px2e54">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0223gi0">
+          <text>the_dealer_total_CN</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="reward_1and_2" name="reward_1and_2" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_0u5krsc">
+      <requiredDecision href="#dealer_TY_Volume" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1trx3d5">
+      <requiredDecision href="#dealer_Main_Status" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0zrwyyz">
+      <requiredDecision href="#Dealer" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0t5ddj8">
+      <requiredDecision href="#Main_CN" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0pr2tan" hitPolicy="COLLECT">
+      <input id="InputClause_0k5nv78" label="the_reward_1">
+        <inputExpression id="LiteralExpression_0ji8iua" typeRef="string">
+          <text>the_reward_1</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_08olzsj" label="the_reward_2">
+        <inputExpression id="LiteralExpression_0860tsy" typeRef="string">
+          <text>the_reward_2</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0vupcqq" label="the_dealer_TY_Volume" biodi:width="150">
+        <inputExpression id="LiteralExpression_16kulnt" typeRef="string">
+          <text>the_dealer_TY_Volume</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1hyew0m" label="the_dealer_MAIN_CN" biodi:width="150">
+        <inputExpression id="LiteralExpression_19isu6s" typeRef="string">
+          <text>the_dealer_MAIN_CN</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_02jttkd" label="the_dealer_MAIN_STATUS" biodi:width="150">
+        <inputExpression id="LiteralExpression_00fawkv" typeRef="string">
+          <text>the_dealer_MAIN_STATUS</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1uc2eay" label="the_dealer_region">
+        <inputExpression id="LiteralExpression_1rro4g8" typeRef="string">
+          <text>the_dealer_region</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1su5xdo" label="the_dealer_depot_state">
+        <inputExpression id="LiteralExpression_1lgc7wd" typeRef="string">
+          <text>the_dealer_depot_state</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1abtquz" label="the_dealer_depot">
+        <inputExpression id="LiteralExpression_0vdscsj" typeRef="string">
+          <text>the_dealer_depot</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0p9tk9i" label="the_dealer_territory_code">
+        <inputExpression id="LiteralExpression_04xl5pf" typeRef="string">
+          <text>the_dealer_territory_code</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_19en50m" label="the_dealer_territory_name">
+        <inputExpression id="LiteralExpression_1wylagl" typeRef="string">
+          <text>the_dealer_territory_name</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ao31kx" label="the_dealer_code" biodi:width="192">
+        <inputExpression id="LiteralExpression_1o9ed8w" typeRef="string">
+          <text>the_dealer_code</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0yilvkm" label="the_dealer_category">
+        <inputExpression id="LiteralExpression_146k1ok" typeRef="string">
+          <text>the_dealer_category</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1xzjk8v" label="the_dealer_bill_to">
+        <inputExpression id="LiteralExpression_19lruwk" typeRef="string">
+          <text>the_dealer_bill_to</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1am9cno" label="the_dealer_type">
+        <inputExpression id="LiteralExpression_10u9xa3" typeRef="string">
+          <text>the_dealer_type</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_131ugdm" label="the_dealer_name">
+        <inputExpression id="LiteralExpression_04uakm1" typeRef="string">
+          <text>the_dealer_name</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_19foccl" label="the_dealer_scheme_id">
+        <inputExpression id="LiteralExpression_1ehd3x4" typeRef="string">
+          <text>the_dealer_scheme_id</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_149kkhk" label="the_reward_dealer_scheme_id" name="the_reward_dealer_scheme_id" typeRef="string" />
+      <output id="OutputClause_0b74886" label="the_reward_dealer_name" name="the_reward_dealer_name" typeRef="string" />
+      <output id="OutputClause_037gtbn" label="the_reward_dealer_type" name="the_reward_dealer_type" typeRef="string" />
+      <output id="OutputClause_1jvpkdq" label="the_reward_dealer_bill_to" name="the_reward_dealer_bill_to" typeRef="string" />
+      <output id="OutputClause_0f40son" label="the_reward_dealer_category" name="the_reward_dealer_category" typeRef="string" />
+      <output id="OutputClause_0hrlp6z" label="the_reward_dealer_code" name="the_reward_dealer_code" typeRef="string" />
+      <output id="OutputClause_1iaks7p" label="the_reward_dealer_territory_name" name="the_reward_dealer_territory_name" typeRef="string" />
+      <output id="OutputClause_1r7c4c0" label="the_reward_dealer_territory_code" name="the_reward_dealer_territory_code" typeRef="string" />
+      <output id="OutputClause_16uq3pb" label="the_reward_dealer_depot" name="the_reward_dealer_depot" typeRef="string" />
+      <output id="OutputClause_1pjf903" label="the_reward_dealer_region" name="the_reward_dealer_region" typeRef="string" />
+      <output id="OutputClause_1lawwi7" label="the_reward_dealer_state" name="the_reward_dealer_state" typeRef="string" />
+      <output id="OutputClause_0g4o1bz" label="the_reward_section_1" name="the_reward_section_1" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_1j6p6or" label="the_reward_section_2" name="the_reward_section_2" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_0kfllg8" label="the_reward_type_1" name="the_reward_type_1" typeRef="string" />
+      <output id="OutputClause_00albzh" label="the_reward_type_2" name="the_reward_type_2" typeRef="string" />
+      <output id="OutputClause_19wtldn" label="the_reward_product_1" name="the_reward_product_1" typeRef="string" />
+      <output id="OutputClause_1nnnnz6" label="the_reward_product_2" name="the_reward_product_2" typeRef="string" />
+      <output id="OutputClause_1uayogz" label="the_reward_unit_1" name="the_reward_unit_1" typeRef="string" />
+      <output id="OutputClause_0sml20z" label="the_reward_unit_2" name="the_reward_unit_2" typeRef="string" />
+      <output id="OutputClause_016c9cd" label="the_reward_date_1" name="the_reward_date_1" typeRef="string" />
+      <output id="OutputClause_00w6e3n" label="the_reward_date_2" name="the_reward_date_2" typeRef="string" />
+      <output id="OutputClause_0gtan5m" label="the_reward_LY" name="the_reward_LY" typeRef="string" />
+      <output id="OutputClause_1v2yo22" label="the_reward_aaditional" name="the_reward_aaditional" typeRef="string" />
+      <output id="OutputClause_170w9gg" label="the_reward_target_1" name="the_reward_target_1" typeRef="string" />
+      <output id="OutputClause_1hmkers" label="the_reward_target_2" name="the_reward_target_2" typeRef="string" />
+      <output id="OutputClause_1bw8lhn" label="the_reward_TY_1" name="the_reward_TY_1" typeRef="string" />
+      <output id="OutputClause_1mm3rf4" label="the_reward_TY_2" name="the_reward_TY_2" typeRef="string" />
+      <output id="OutputClause_0ftvfoa" label="the_reward_next_target_1" name="the_reward_next_target_1" typeRef="string" />
+      <output id="OutputClause_13akiiz" label="the_reward_next_target_2" name="the_reward_next_target_2" typeRef="string" />
+      <output id="OutputClause_0zk7u8o" label="the_reward_status_1" name="the_reward_status_1" typeRef="string" />
+      <output id="OutputClause_0yjox0z" label="the_reward_status_2" name="the_reward_status_2" typeRef="string" />
+      <output id="OutputClause_0kpkt5n" label="the_reward_description_1" name="the_reward_description_1" typeRef="string" />
+      <output id="OutputClause_09zi1zh" label="the_reward_description_2" name="the_reward_description_2" typeRef="string" />
+      <output id="OutputClause_1kfv3dl" label="the_reward_total_1" name="the_reward_total_1" typeRef="string" />
+      <output id="OutputClause_0psf8lt" label="the_reward_total_2" name="the_reward_total_2" typeRef="string" />
+      <output id="OutputClause_1yjjjf3" label="the_reward_gift_to_CN_flag" name="the_reward_gift_to_CN_flag" typeRef="string" />
+      <output id="OutputClause_0elbyo0" label="the_reward_converted_CN" name="the_reward_converted_CN" typeRef="string" />
+      <rule id="DecisionRule_15i6vok">
+        <inputEntry id="UnaryTests_0agy457">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n92fb0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1miqxa0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bkpmtr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uvk0k5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gzxn78">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0faaja1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05wcopf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j4a69c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01t6pi9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a80614">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04p4ur7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wr18va">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12xapns">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o51i5n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w6p63y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0azdxt1">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lfjwtx">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0iijcsb">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vn6wfn">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n3lkv8">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_086rw3t">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fe8ul8">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ng51o5">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mlqhmj">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0emrx6t">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xuw5so">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12wc3d1">
+          <text>"MAIN SCHEME"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xfve1b">
+          <text>"TOTAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m43kbt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05f3l5n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1khq6pg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lsl785">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xm3atn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qkhhdx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q3wpum">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0754wy1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0scyi7a">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14dkzjj">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t4jwdp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_115fjw5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d6v23e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0riyt3e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p7kgji">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fvx80u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u9o5ey">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a08krd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g9pii5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01phv3e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gpdqba">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09hqhj0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sl6fik">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_086u1hs">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xaesqe">
+        <inputEntry id="UnaryTests_0y9z5wz">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0whszir">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13sr6ut">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hw6g5n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ozuoap">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ibhdn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tjwt0y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fo2tdb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v6jckg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06juffn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fg7yqv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hsljhg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r1ax73">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x2d2wu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q5cefx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y4uidf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qub982">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f3f174">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0np7f53">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02gu67l">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cnp5hg">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t8cuiz">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g78p8r">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c6pcwi">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rxao04">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03lo3r2">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tz3bpx">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vyaf5k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wixud4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_039elqs">
+          <text>"Qualification"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05hl64n">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qtihkw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10rt6pc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cx6jrx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wu1whl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gu1ie9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r14fmj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yizql9">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0y5pzyu">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1atu70m">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0swaech">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qh6g90">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yawe36">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ebywd4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vgzjw1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ihfo5c">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rrq40q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_106bzx1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11wt8wf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t81cu4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04qv2g4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1994veq">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u6heul">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dxodf2">
+        <inputEntry id="UnaryTests_1cte26y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ui7o75">
+          <text>ends with(the_reward_2, _2)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0er2a8a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f12far">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jmq7cp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0znt25i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jjq5ui">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e370ni">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kh6t7l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_118clk0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a91o35">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yfbu2l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uqggct">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jn3pcd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r1b9ps">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kwczxm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e5n1lq">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jrrqlj">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m2gmeq">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10r4d51">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00tple3">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13e5tcr">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hlgulx">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k0rlat">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01hh26g">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c888l2">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ysarub">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16aoxiv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vdbnsi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s0jivo">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mw6anq">
+          <text>"CN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h8d4fg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04luk03">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fbpqhv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lj5r8a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c29wrg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k79ras">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lbay65">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ojh37r">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n015mt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y7hbhz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11jplxt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12kpyl9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g8ocv7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e9teae">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17am5qx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fqvzrx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i8mwe4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rs8ny2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1no790h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hgna88">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ps38aq">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cqxwt6">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07vcv3s">
+        <inputEntry id="UnaryTests_0ynx1yo">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rtl1t5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sqhtsv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u4p8cr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w5fc5t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07iwv3e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05i6dqy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jg5f3c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rw2o06">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uxzvh3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pzcxkg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ghe7el">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cs6iei">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_147bgu3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1twrtvb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0syl4cf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1huegxw">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pcq8vo">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n9ylzc">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rwqntk">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07rwykk">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00ej3y6">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0enq8jz">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13j1h1j">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15fc49s">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0awljr9">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zmes6n">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cnoc3g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qvpcq2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jwbht6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h58yj4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dy78fs">
+          <text>"WCS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04n5834">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1by4j6g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xdwnpk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1deb9u2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rx9tck">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wm1jrl">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0483tsa">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a0k8nv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x4fp82">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eyzdhw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ydh5u6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v50ddy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1aiqvu3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13sue6k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13syiwl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1785m5s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p6mk9t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m46qkc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xqro3k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0czpu8e">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nivxjy">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dze8h5">
+        <inputEntry id="UnaryTests_00zl72i">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_098ozar">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t7p3na">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1indy96">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ih0a95">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iyu0vm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ltq9kw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xi9qze">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tzd4l0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ly254">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a4566z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wecc5z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qdjg0c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_009yrbm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07d34r8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h0y3cd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bla8g2">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w5dnx0">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t0i2d8">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_142jlqg">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1poq9zv">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nsw8aq">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n23ln8">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ypowlk">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11h8854">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u9ieak">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xgdtyz">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s7e7a1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0incq9i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qypx3e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nk3jjk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09rjiul">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00000g3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07rjbn8">
+          <text>"Volume"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18hdinu">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jt3843">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lndq6u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u0s6ar">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hrrtcm">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x8wspz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t4rvh5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vsjmzq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_021ir96">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09cic1w">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d11i1m">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04mhkp1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17ns08c">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16y8b0p">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vxu2rd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ls7082">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nadmgy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oz5y07">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oll338">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16wka5h">
+        <inputEntry id="UnaryTests_0apyjci">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18jpkqy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fkinkm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19wax5n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m4yksp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0clsxmi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m0ijk8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_034uoh7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jzsrci">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ye3lav">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09yizng">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jt3klq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06mcqei">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fqsd70">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pc4p47">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0etyptd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d4pnye">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d3rp8z">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w7ozx1">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jsbsii">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qdoipf">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0y2nddo">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dtn965">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yvl4sb">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ixmrp2">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0br6p7f">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kppjcs">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j2fsvw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ami14t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pdbz0v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e6u8dn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i85pgs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wh0sxk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_122u4rk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12yu1q5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ouv4mv">
+          <text>"2018-03-23"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ufqule">
+          <text>"2018-03-23"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17p12ma">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_171bg0r">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bqr46w">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y8ms6x">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_172dsck">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s95tmo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yiellf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10bxtwp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jdi25g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11u74dt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o35o5w">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_160f1jo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e24fse">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z86q07">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wtf602">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d70zcv">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sble1n">
+        <inputEntry id="UnaryTests_1nkkuek">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qlm7z5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wwtxln">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ax2fiv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hdffc7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ro3uek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mylo87">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_141ogg5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u31089">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11jg9t5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0umtgfa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mp07p0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i7l4yr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p9n1i4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xpvfhw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_003dtxi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qri2dr">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i0kvcf">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01rviah">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xuwnie">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qb11sj">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a3v6m9">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_090we21">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zpvixv">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18ft9tf">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ef2k2e">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01l2uoh">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qyw2rw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z4pih1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ti5ssr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mc140q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a5uhtv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vkwmog">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04uy1va">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yfa2mz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xiyzhu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w3jbwy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y42jmv">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e7kvu8">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gdatfh">
+          <text>150</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0shbdyq">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jyu1gt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tkz3q2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mqehhx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09iqx5w">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v1jt2g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uozdbz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00ku4sy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bjngc0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lgofti">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kx9rjk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fi3fpr">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gcs9ab">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xm2o5x">
+        <inputEntry id="UnaryTests_18n6ex4">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jmcwq9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w9p3sf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jd52se">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ptnxb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1so2jrq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u9qjcm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11nie3f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n01iza">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rjw3y6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ynomb5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ph32zq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0406d4s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g6y84f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12tqc5l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xsewz7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ixstem">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06wovfp">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zw4mj7">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_092vidy">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04d6dem">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lidmfh">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cocvae">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_076wawa">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d0cou7">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09v2bjt">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ft5rmx">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d0xe3b">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n9nqeu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fk71ct">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rblgcc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mkjzdt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_060wa8e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0prvqac">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cqg6l7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0899sck">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nux8hh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_103kgyr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d1utnp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n3ofw6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mmeojg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xbucs2">
+          <text>the_dealer_TY_Volume</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03fl316">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sn3jhv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eaxas2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0anp1q3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o2jy9j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oca4pg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v4gjuc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r825ro">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dk5hte">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_131ozvx">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14mdppv">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zzx01c">
+        <inputEntry id="UnaryTests_0x0el1o">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08hmbbt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xsn66f">
+          <text>&lt;150</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kua64t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05d3nan">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d40qn2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rrij47">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oayd0o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1khyxwf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iy13hg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k36u8u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jaabek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_009dsay">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fa1lrw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z79tr3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ycgb4s">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wdqirv">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t5vtb8">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09ay01s">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gtvu3d">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p5y7ij">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_062jjs4">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j7jqdb">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02gc2l8">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wmkd91">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pdu9nr">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qfgmna">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pnjmsh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18f1t1a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nvj2i0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cdk78c">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jpsyxf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ono3bv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01hkeig">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0imbdg6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1trb8g8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wosn9r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ji3p4g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10w1r10">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bv10um">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08ew9a5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_189dncp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17wpmv8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0suv90d">
+          <text>150-the_dealer_TY_Volume</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_042ytdn">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eda7i6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12guwth">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1adbz59">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tk9i38">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x8a2md">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18bxm41">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lgmzs7">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17cxz9x">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vg2nyl">
+        <inputEntry id="UnaryTests_1bcppwx">
+          <text>ends with(the_reward_1, _1)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05t7gtq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18ls9nh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_191m9nv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u29o68">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rr9s59">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14zd32e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00zegud">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0demdun">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jeb2i9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tqyyc9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uw8o8k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06czqm5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13ldq0c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v99bf6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0diy15u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ocwkrw">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04k1ltn">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s7au73">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s0m5gf">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04j30xw">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q48yw3">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vrq14z">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r1vuk3">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_133husy">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_132hgjc">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dpg9ln">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sqin3e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0le3p0n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xr20d7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pcql9u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jtsspt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03j7ktr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18hyuhr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1628v9k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ksa80n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e3hqcv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k2o5h5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tuqosm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11qyemq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hvrdiy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k2jl5e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hf7x4u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kxj25v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qhjcjr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08vgoyy">
+          <text>the_dealer_MAIN_STATUS</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10gzu07">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e2juoc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_072h7aj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b4sa98">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vi8rx9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tf3qjm">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oipzdi">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1t6m24w">
+        <inputEntry id="UnaryTests_1xxvohz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1timeo6">
+          <text>ends with(the_reward_2, _2)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1djjqap">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j1f3re">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n5ehca">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dv16ib">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dywhrm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g9gqcy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05kwhq9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dqy9ox">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a2jvcg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iyuv6c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uj9br8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tb99fb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11bvh67">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0deoh9g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oybn69">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l0brp6">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xpr05i">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01z1ah1">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h3qk8s">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ecf75a">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05lmlwx">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bn7qh4">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vskisn">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lhft5h">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d7lahr">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12lpa0z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10mxdls">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ngzv06">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1py09qu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1frmmhk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yi494i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kkmff5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13ye9i7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r2n46z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yjkfk0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xteqzb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00hqpu4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0if1j96">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10hhs96">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16pqh42">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1drlv8y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08wlzul">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g6nvb3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_182sfa9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uz7e5s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19rgq3o">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03j673j">
+          <text>"TOTAL CN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04s52tg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r1ps8q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1loy360">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0191rjm">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_107xsre">
+        <inputEntry id="UnaryTests_0naalqs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_156yjhc">
+          <text>ends with(the_reward_2, _2)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j3my2c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02dnji2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vxh0lr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xulj35">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jdqym1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mh7idd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02dt20f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iwatki">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k6iyy6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s8y0dx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_144q07a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zei4vt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oddsz5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f7ddw9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ol9sou">
+          <text>the_dealer_scheme_id</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g9pr4z">
+          <text>the_dealer_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14nq0qd">
+          <text>the_dealer_type</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lt41w0">
+          <text>the_dealer_bill_to</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_067bh79">
+          <text>the_dealer_category</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bmyi8m">
+          <text>the_dealer_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_177qpa6">
+          <text>the_dealer_territory_name</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12cwbgm">
+          <text>the_dealer_territory_code</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tlulrh">
+          <text>the_dealer_depot</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12o0imc">
+          <text>the_dealer_region</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s70cmv">
+          <text>the_dealer_depot_state</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08o8fz3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c9ii1f">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m7siq5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x8jz87">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m26fmj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ofjq1v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1unqlgw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_102ahe1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ufjetk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0793ao5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02v53hy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mxsugr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06blamc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_133y8zs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00dhqux">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05oxsk8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_098zmy4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gkg51g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mfynq3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19yiaeo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eawslb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15k7v01">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nhhb8b">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sjdmqa">
+          <text>the_dealer_MAIN_CN</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10y5uqv">
+          <text>"N"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09m2ama">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="reward_interface_status" name="reward_interface_status" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_1ku5w0d">
+      <requiredDecision href="#reward_1and_2" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1y6w9j5" hitPolicy="FIRST">
+      <input id="InputClause_1coqu97" label="the_reward_section_2">
+        <inputExpression id="LiteralExpression_1lpzwwo" typeRef="string">
+          <text>the_reward_section_2</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0lmmlwc" label="the_reward_interface_status_1" name="the_reward_interface_status_1" typeRef="string" />
+      <output id="OutputClause_13i5q7y" label="the_reward_interface_status_2" name="the_reward_interface_status_2" typeRef="string" />
+      <rule id="DecisionRule_1tq06o4">
+        <inputEntry id="UnaryTests_0qlk0bo">
+          <text>"TOTAL"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1k1i3n0">
+          <text>"NR"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bc7e1q">
+          <text>"P"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Main_CN" name="Main_CN" camunda:historyTimeToLive="160">
+    <informationRequirement id="InformationRequirement_1uox846">
+      <requiredDecision href="#dealer_TY_Volume" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0knd46t" hitPolicy="FIRST">
+      <input id="InputClause_151inzd" label="the_dealer_TY_Volume" biodi:width="281">
+        <inputExpression id="LiteralExpression_05swzdx" typeRef="string">
+          <text>the_dealer_TY_Volume</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_07esr20" label="the_dealer_MAIN_CN" name="the_dealer_MAIN_CN" typeRef="integer" />
+      <rule id="DecisionRule_1d5rr5j">
+        <inputEntry id="UnaryTests_0u5m194">
+          <text>&gt;="500"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a9rs1i">
+          <text>2000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16r0qm1">
+        <inputEntry id="UnaryTests_0r9smxw">
+          <text>(&gt;= "150" and  &lt; "500")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11njw3x">
+          <text>500</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05y21hw">
+        <inputEntry id="UnaryTests_0961vo7">
+          <text>&lt;"150"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10fjnzi">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ga120q">
+        <inputEntry id="UnaryTests_0x61gm5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02mgods">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Products">
+        <dc:Bounds height="80" width="180" x="370" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0m6essb" dmnElementRef="Product_Eligible">
+        <dc:Bounds height="80" width="180" x="370" y="180" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_09frocj" dmnElementRef="InformationRequirement_04lnj2k">
+        <di:waypoint x="460" y="160" />
+        <di:waypoint x="460" y="160" />
+        <di:waypoint x="460" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1ovqg9g" dmnElementRef="Dealer">
+        <dc:Bounds height="80" width="180" x="630" y="100" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_15wpq4o" dmnElementRef="dealer_TY_Volume">
+        <dc:Bounds height="80" width="180" x="370" y="280" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0xdasw0" dmnElementRef="InformationRequirement_0sdxnhl">
+        <di:waypoint x="460" y="260" />
+        <di:waypoint x="460" y="260" />
+        <di:waypoint x="460" y="280" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0ye0gxn" dmnElementRef="dealer_Main_Status">
+        <dc:Bounds height="80" width="180" x="170" y="380" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0temnvm" dmnElementRef="InformationRequirement_0diqfd8">
+        <di:waypoint x="460" y="360" />
+        <di:waypoint x="260" y="360" />
+        <di:waypoint x="260" y="380" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_095wv1a" dmnElementRef="dealer_total_CN_Budget">
+        <dc:Bounds height="80" width="180" x="370" y="530" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0mg4ddb" dmnElementRef="dealer_total_budget">
+        <dc:Bounds height="80" width="180" x="370" y="630" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_15n48ny" dmnElementRef="InformationRequirement_1iwiprw">
+        <di:waypoint x="460" y="610" />
+        <di:waypoint x="460" y="610" />
+        <di:waypoint x="460" y="630" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0uu5lqk" dmnElementRef="reward_1and_2">
+        <dc:Bounds height="80" width="180" x="630" y="333" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0jibo0t" dmnElementRef="InformationRequirement_0u5krsc">
+        <di:waypoint x="550" y="320" />
+        <di:waypoint x="610" y="360" />
+        <di:waypoint x="630" y="360" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1wwjsrs" dmnElementRef="InformationRequirement_1trx3d5">
+        <di:waypoint x="350" y="420" />
+        <di:waypoint x="610" y="386" />
+        <di:waypoint x="630" y="386" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0isski1" dmnElementRef="reward_interface_status">
+        <dc:Bounds height="80" width="180" x="870" y="333" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_17hhx4s" dmnElementRef="InformationRequirement_1ku5w0d">
+        <di:waypoint x="810" y="373" />
+        <di:waypoint x="850" y="373" />
+        <di:waypoint x="870" y="373" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1b8c835" dmnElementRef="InformationRequirement_0zrwyyz">
+        <di:waypoint x="720" y="180" />
+        <di:waypoint x="720" y="313" />
+        <di:waypoint x="720" y="333" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_11zerxw" dmnElementRef="Main_CN">
+        <dc:Bounds height="80" width="180" x="370" y="430" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0w0ymdw" dmnElementRef="InformationRequirement_1uox846">
+        <di:waypoint x="460" y="360" />
+        <di:waypoint x="460" y="410" />
+        <di:waypoint x="460" y="430" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_12x1j5j" dmnElementRef="InformationRequirement_1yp1lyd">
+        <di:waypoint x="460" y="510" />
+        <di:waypoint x="460" y="510" />
+        <di:waypoint x="460" y="530" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1rnq6zb" dmnElementRef="InformationRequirement_0t5ddj8">
+        <di:waypoint x="460" y="430" />
+        <di:waypoint x="720" y="433" />
+        <di:waypoint x="720" y="413" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORA New Year Rule</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/dmn-js@17.0.2/dist/assets/diagram-js.css">
+  <link rel="stylesheet" href="https://unpkg.com/dmn-js@17.0.2/dist/assets/dmn-js-shared.css">
+  <link rel="stylesheet" href="https://unpkg.com/dmn-js@17.0.2/dist/assets/dmn-js-drd.css">
+  <link rel="stylesheet" href="https://unpkg.com/dmn-js@17.0.2/dist/assets/dmn-js-decision-table.css">
+  <link rel="stylesheet" href="https://unpkg.com/dmn-js@17.0.2/dist/assets/dmn-js-decision-table-controls.css">
+  <link rel="stylesheet" href="https://unpkg.com/dmn-js@17.0.2/dist/assets/dmn-js-literal-expression.css">
+  <link rel="stylesheet" href="https://unpkg.com/dmn-js@17.0.2/dist/assets/dmn-font/css/dmn.css">
+
+  <script src="https://unpkg.com/dmn-js/dist/dmn-modeler.development.js"></script>
+    <style>
+        #dmn-container {
+            width: 100%;
+            height: 480px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+
+        #controls {
+            display: flex;
+            justify-content: space-between;
+            float: right;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        btn {
+            padding: 5px 10px;
+            font-size: 8px;
+            cursor: pointer;
+        }
+             #version-label {
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #ffffff;
+            color: rgb(14, 4, 4);
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+     #comment-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background-color: #ffffff;
+            /* color: rgb(14, 4, 4); */
+            font-size: 14px;
+            font-weight: bold;
+            /* border-radius: 3px; */
+            width: 450px;
+            /* border: 1px solid #ccc; */
+        }
+        #history-popup {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 25px;
+           
+            border-radius: 8px;
+          
+            z-index: 1000;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        #history-popup table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #history-popup th, #history-popup td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        #history-popup th {
+            background-color: #f2f2f2;
+        }
+
+        #history-popup button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ORA Rule Editor</h2>
+
+   <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"; position="relative";  margin-top: 20px; id="version-label">Deployed Version: <span id="version-id">Loading...</span></div>
+    <div id="dmn-container"></div>
+    <div id="controls">
+     <button id="history-button" style="border-radius: 10px; background-color: #F0F0F0">History</button>
+ 
+        <button id="validate-button" style="border-radius: 10px; background-color: #F0F0F0">Validate</button> 
+        <button id="save-button" disabled style="border-radius: 10px;  background-color: #F0F0F0"> Update Rule</button>
+        <select id="version-dropdown" style="border-radius: 10px; background-color: #F0F0F0 ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <option  value="">Version ID</option>
+          </select>
+          
+       
+    </div>
+    <div id="comment-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Comment: <span id="version-id">Loading...</span></div>
+
+
+    <script src="app.js"></script> <!--  -->
+    <script>
+        let modeler; 
+        let xmlData;
+        const container = document.getElementById('dmn-container');
+        modeler = new DmnJS({ container });
+
+        function loadDMN() {
+          //fetch('http://localhost:3003/api/get-dmn') 
+           fetch('http://140.238.244.160:3003/api/get-dmn') 
+                .then(response => { 
+                   // alert(response.statusText)
+                    if (!response.ok) throw new Error('Failed to fetch DMN XML.');
+                    return response.text();
+                })
+                .then(dmnXML => {
+                    console.log('First loaded dmn',dmnXML );
+                    loadeddmn=dmnXML;
+                    modeler.importXML(dmnXML)
+                        .then(() => console.log('DMN loaded successfully!')   )
+                        
+                        .catch(err => console.error('Error loading DMN:', err));
+                })
+                .catch(err => console.error('Failed to fetch DMN:', err));
+        } 
+      
+        loadDMN();
+let versionlist;
+let versions;
+        function loadVersionIds() {
+
+ //fetch('http://localhost:3003/api/get-version-ids') 
+   fetch('http://140.238.244.160:3003/api/get-version-ids') 
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch version IDs.');
+            return response.json();
+        })
+        .then(data => {
+            const dropdown = document.getElementById('version-dropdown');
+           
+            const versionLabel = document.getElementById('version-id'); 
+          //  alert(versionLabel)
+            const commentLabel = document.getElementById('comment-label'); 
+            if (!dropdown) {
+                console.error('Dropdown element not found!');
+                return;
+            }
+
+            if (data.versionIds && data.versionIds.length > 0) {
+               
+                dropdown.innerHTML = ''; 
+                const defaultOption = document.createElement('option');
+                defaultOption.textContent = 'Version ID';
+                defaultOption.disabled = true;
+                defaultOption.selected = true;
+                dropdown.appendChild(defaultOption);
+                data.versionIds.forEach(({ version }) => {
+                    const option = document.createElement('option');
+                    option.value = version;
+                                versionlist=option.value;
+                                 //   alert(versionlist);
+                    option.textContent = version;
+                                     versions=   option.textContent;
+                    dropdown.appendChild(option);
+                });
+                versionLabel.textContent = data.versionIds[0].version;
+                loadCommentForVersion(data.versionIds[0].version); 
+            } else {
+                const option = document.createElement('option');
+                option.textContent = 'No versions available';
+                option.disabled = true;
+                dropdown.appendChild(option);
+                versionLabel.textContent = 'No versions available';
+            }
+        })
+        .catch(err => console.error('Error loading version IDs:', err));
+}
+        const versionDropdown = document.getElementById('version-dropdown');
+        if (versionDropdown) {
+          
+            versionDropdown.addEventListener('change', (event) => {
+                const selectedVersion = event.target.value;
+                alert(selectedVersion)
+                console.log('Selected Version:', selectedVersion);
+                loadCommentForVersion(selectedVersion); 
+                versionDropdown.addEventListener('focus', (event) => {
+        const selectedVersion = versionDropdown.value;
+        if (selectedVersion && selectedVersion !== 'Select Version') {
+            loadCommentForVersion(selectedVersion);  
+        }
+    });
+                if (selectedVersion && selectedVersion !== 'Select Version') {
+
+
+ //fetch('http://localhost:3003/api/get-dep-id-XML', { 
+                   fetch('http://140.238.244.160:3003/api/get-dep-id-XML', { 
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ version: selectedVersion })
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('Failed to fetch DMN for selected version');  
+                        return response.text();
+                    })
+                    .then(dmnXML => {
+                        modeler.importXML(dmnXML)
+                            .then(() => console.log('DMN loaded successfully for selected version!'))
+                            .catch(err => console.error('Error loading DMN for selected version:', err));
+                    })
+                    .catch(err => console.error('Failed to fetch DMN:', err));
+                }
+            });
+        }
+function redirectlink(){
+    const userConfirmed = confirm("Leaving this page");
+if (userConfirmed) {
+    console.log('Within Yes');
+    window.location.href = "https://demo.omfysgroup.com/bsatORA/oiainfo";
+} else {
+    console.log('Within No');
+    location.reload();
+} 
+}
+function redirectlink1(){
+  
+    console.log('Within Yes');
+    window.location.href = "https://demo.omfysgroup.com/bsatORA/oiainfo";
+
+}
+
+function loadCommentForVersion(versionId) {
+    const commentLabel = document.getElementById('comment-label'); 
+     
+
+ //fetch(`http://localhost:3003/api/get-comment`, {
+   fetch(`http://140.238.244.160:3002/api/get-comment`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ version: versionId })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Failed to fetch comment for the version.');
+        return response.json();
+    })
+    .then(data => {
+        const comment = data.comments;
+        if (comment) {
+            commentLabel.textContent = `Comment: ${comment}`;
+        } else {
+            commentLabel.textContent = `Comment: No comment available for version ${versionId}`;
+        }
+    })
+    .catch(err => {
+        console.error('Error fetching comment:', err);
+        commentLabel.textContent = 'Error fetching comment';
+    });
+}
+let dmnsaved;
+let loadeddmn;
+
+document.getElementById('save-button').addEventListener('click', () => {
+ 
+            modeler.saveXML({ format: true })
+                .then(({ xml }) => {
+                    console.log('DMN to be saved:', xml);
+                    dmnsaved=xml;
+                    if(dmnsaved===loadeddmn){
+                        alert('No changes were made, so a new version has not been generated.');
+                        location.reload();
+                    }else{
+
+                //  return fetch('http://localhost:3003/api/save-dmn', { 
+                    return fetch('http://140.238.244.160:3002/api/save-dmn', { 
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/xml' },
+                        body: xml
+                    });
+}})
+                .then(response => {
+                    console.log('xml file for save' ,response.text);
+                    if(response.ok){
+                     /* if(dmnsaved===loadeddmn){
+                        alert('No changes were made, so a new version has not been generated.'); ////////////////////////////////////////////////////// message box
+                      }else{*/
+                        showCommentPopup();
+                     // } 
+                    }else{
+                        alert('Error in DMN');
+                    }
+                })
+                .catch(err => console.error('Error saving DMN:', err));
+        });
+        document.getElementById('validate-button').addEventListener('click', () => {
+            modeler.saveXML({ format: true })
+                .then(({ xml }) => {
+                    console.log('DMN to be validated:', xml);
+
+
+ //return fetch('http://localhost:3003/api/save-dmn-ForValidate', {
+                  return fetch('http://140.238.244.160:3003/api/save-dmn-ForValidate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/xml' },
+                        body: xml 
+                    });
+                })
+                .then(response => {
+                    return response.json();  
+                })
+                .then(data => {
+                    const saveButton = document.getElementById('save-button');
+                    if (data.errors && data.errors.length > 0) {
+                        let errorMessages = 'Validation failed with the following errors:\n\n';
+                        data.errors.forEach(error => {
+                            errorMessages += `- ${error}\n`; 
+                        });
+                       alert(errorMessages); 
+                       saveButton.disabled = true; 
+                    } else if (data.message) {
+                        console.log('DMN successfully validated');
+                        alert(data.message);
+                        console.log('data message ', data.message);  
+                        saveButton.disabled = false;
+                    }
+                })
+               .catch(err => {
+                    console.error('Error validating DMN:', err);
+                    saveButton.disabled = true;
+                });
+        });
+        
+        function showCommentPopup() 
+         {
+            const currentVersionId = document.getElementById('version-id').textContent;
+const currentVersionId2 = document.getElementById('version-dropdown').value;
+const nextVersionId = parseInt(currentVersionId, 10) + 1;
+
+const popup = document.createElement('div');
+popup.style.position = 'fixed';
+popup.style.top = '40%';
+popup.style.left = '50%';
+popup.style.transform = 'translate(-50%, -50%)';
+popup.style.padding = '25px';
+popup.style.backgroundColor = '#fff';
+popup.style.border = '2px solid rgb(204, 204, 204)';
+popup.style.borderRadius = '8px';
+popup.style.boxShadow = '0px 4px 20px rgba(0, 0, 0, 0.1)';
+popup.style.zIndex = '1000';
+popup.style.maxWidth = '240px';
+popup.style.width = '100%';
+popup.style.transition = '0.3s';
+
+// Title
+const title = document.createElement('h3');
+title.textContent = 'Reason for Deployment';
+title.style.fontFamily = 'Segoe UI';
+title.style.marginTop = '20px';
+title.style.marginBottom = '10px';
+title.style.fontSize = '20px';
+title.style.textAlign = 'center';
+title.style.position = 'relative';
+title.style.bottom = '10px';
+popup.appendChild(title);
+
+// Version Label
+const versionLabel = document.createElement('label');
+versionLabel.textContent = 'Version ID:';
+versionLabel.style.fontFamily = 'Segoe UI';
+versionLabel.style.fontSize = '16px';
+versionLabel.style.position = 'relative';
+versionLabel.style.left = '-2%';
+versionLabel.style.bottom = '1px';
+versionLabel.style.padding = '1%';
+popup.appendChild(versionLabel);
+
+// Version Input
+const versionInput = document.createElement('input');
+versionInput.type = 'text';
+versionInput.value = nextVersionId;
+versionInput.readOnly = true;
+versionInput.style.width = '54%';
+versionInput.style.padding = '14px';
+versionInput.style.marginTop = '20px';
+versionInput.style.marginBottom = '20px';
+versionInput.style.fontSize = '16px';
+versionInput.style.height = '12px';
+versionInput.style.borderRadius = '6px';
+versionInput.style.border = '1px solid rgb(221, 221, 221)';
+versionInput.style.position = 'relative';
+popup.appendChild(versionInput);
+
+// Comment Label
+const commentLabel = document.createElement('label');
+commentLabel.textContent = 'Comment:';
+commentLabel.style.fontFamily = 'Segoe UI';
+commentLabel.style.fontSize = '16px';
+commentLabel.style.position = 'relative';
+commentLabel.style.right = '23px';
+commentLabel.style.top = '9px';
+commentLabel.style.padding = '9%';
+popup.appendChild(commentLabel);
+
+// Comment Input
+const commentInput = document.createElement('textarea');
+commentInput.maxLength = 50;
+commentInput.style.width = '90%';
+commentInput.style.height = '75%';
+commentInput.style.padding = '12px';
+commentInput.style.marginTop = '18px';
+commentInput.style.marginBottom = '15px';
+commentInput.style.fontSize = '16px';
+commentInput.style.borderRadius = '6px';
+commentInput.style.border = '1px solid rgb(221, 221, 221)';
+commentInput.style.resize = 'none';
+popup.appendChild(commentInput);
+
+// Buttons Container
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'space-between';
+buttonsContainer.style.position = 'relative';
+popup.appendChild(buttonsContainer);
+
+// Submit Button
+const submitButton = document.createElement('button');
+submitButton.textContent = 'Submit';
+submitButton.style.padding = '12px 18px';
+submitButton.style.backgroundColor = 'rgb(76, 175, 80)';
+submitButton.style.color = '#fff';
+submitButton.style.border = 'none';
+submitButton.style.borderRadius = '6px';
+submitButton.style.cursor = 'pointer';
+submitButton.style.fontSize = '16px';
+submitButton.style.transition = 'background-color 0.3s';
+submitButton.style.marginBottom = '5px';
+
+buttonsContainer.appendChild(submitButton);
+
+// Cancel Button
+const cancelButton = document.createElement('button');
+cancelButton.textContent = 'Cancel';
+cancelButton.style.padding = '12px 18px';
+cancelButton.style.backgroundColor = 'rgb(244, 67, 54)';
+cancelButton.style.color = '#fff';
+cancelButton.style.border = 'none';
+cancelButton.style.borderRadius = '6px';
+cancelButton.style.cursor = 'pointer';
+cancelButton.style.fontSize = '16px';
+cancelButton.style.transition = 'background-color 0.3s';
+cancelButton.style.height = '42.5px';
+
+cancelButton.addEventListener('mouseover', () => {
+    cancelButton.style.backgroundColor = '#e53935';
+});
+cancelButton.addEventListener('mouseout', () => {
+    cancelButton.style.backgroundColor = 'rgb(244, 67, 54)';
+});
+buttonsContainer.appendChild(cancelButton);
+
+// Add popup to DOM
+document.body.appendChild(popup);
+
+// Cancel button click event
+cancelButton.addEventListener('click', () => {
+    document.body.removeChild(popup);
+const saveButton = document.getElementById('save-button');
+ saveButton.disabled = true;
+
+   //location.reload();
+});
+
+// Submit button click event
+submitButton.addEventListener('click', () => {
+    const comment = commentInput.value.trim();
+    if (!comment) {
+        alert('Please enter a comment.');
+        return;
+    }
+
+    const versionData = {
+        version_Id: versionInput.value,
+        comments: comment
+    };
+
+  //fetch('http://localhost:3003/api/set-comment-id', {
+   fetch('http://140.238.244.160:3003/api/set-comment-id', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(versionData)
+    })
+    .then(response => {
+        if (response.ok) {
+            const userConfirmed = confirm("Deployed successfully. Do you want to go back?");
+            if (userConfirmed) {
+                document.body.removeChild(popup);
+                window.location.href = "https://demo.omfysgroup.com/bsatORA/oiainfo";
+            } else {
+                document.body.removeChild(popup);
+                location.reload();
+            }
+        } else {
+            alert('Failed to save comment.');
+        }
+    })
+    .catch(err => {
+        console.error('Error saving comment:', err);
+        alert('Error occurred while saving the comment.');
+    });
+});
+         }
+         
+ document.getElementById('history-button').addEventListener('click', () => {
+
+// fetch('http://localhost:3003/api/get-versiontrackerlist', {
+   fetch('http://140.238.244.160:3003/api/get-versiontrackerlist', {
+        method: 'GET',
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data && Array.isArray(data) && data.length > 0) {
+            console.log(data.version_Id)
+            const popup = document.createElement('div');
+            popup.id = 'history-popup';
+
+            popup.innerHTML = `
+                <div style="width: 400px; height: 400px; overflow-y: auto; padding: 10px; background-color: #fff; border: 2px solid #000; border-radius: 10px; position: fixed; top: 210px; left: 150%; transform: translate(-50%, -50%); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin-left:5px; position:relative; bottom:20px">Version History</h3>
+                  <table style="width: 100%; border-collapse: collapse; margin-top: -30px; ; margin-left:02px">
+                        <thead style="backgroundColor:#F0F0F0">
+                            <tr>
+                                <th style="border: 1px solid #F0F0F0; padding: 8px; text-align: left;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Version ID</th>
+                                <th style="border: 1px solid #F0F0F0; padding: 8px; text-align: left;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(item => `
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">${item.version_Id}</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">${item.comments}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+
+                    <!-- Close button at the top-right corner -->
+         <button 
+  onclick="this.closest('#history-popup').remove()" 
+  style="position: absolute; top: -16px; right: 10px; background-color: #F44336; border: 1px solid; font-size: 16px; padding: 4px 8px; color: white; cursor: pointer;">
+  &times;
+</button>
+
+                    <!-- Close button at the bottom -->
+                    <button onclick="this.closest('#history-popup').remove()" 
+                            style="margin-top: 10px; padding: 8px 16px; background-color: #f44336; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+                </div>
+            `;
+            document.body.appendChild(popup);
+        } else {
+            alert('No version data available.');
+        }
+    })
+    .catch(err => {
+        console.error('Error fetching version data:', err);
+        alert('Error fetching version data.');
+    });
+});
+        loadVersionIds();
+    </script>
+</body>
+</html>
