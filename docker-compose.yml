@@ -5,7 +5,7 @@ services:
     image: camunda/camunda-bpm-platform:run-latest
     container_name: camunda-platform
     ports:
-      - 8080:8080
+      - 5002:5002
     networks:
       - java_connect
     restart: always
