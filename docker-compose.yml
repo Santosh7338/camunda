@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  camunda:
+    image: camunda/camunda-bpm-platform:run-latest
+    ports:
+      - "5005:5005"
+    environment:
+      - PORT=3000
+
+  app:
+    build: .
+    depends_on:
+      - camunda
+    environment:
+      CAMUNDA_BASE_URL: http://camunda:5004/engine-rest
